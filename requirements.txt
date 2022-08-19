@@ -1,9 +1,13 @@
-from powerbiclient import Report, models
-from IPython.display import Javascript
-import pandas as pd
+#from powerbiclient import Report, models
+#from IPython.display import Javascript
+#import pandas as pd
 
-import snowflake.connector
-from io import StringIO
-import pandas as pd
-from ipywidgets import interact
-import numpy as np
+#import snowflake.connector
+#from io import StringIO
+#import pandas as pd
+#from ipywidgets import interact
+#import numpy as np
+
+pip install selenium
+pip install webdriver_manager
+pip install chromedriver-autoinstaller
