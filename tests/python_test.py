@@ -2,7 +2,7 @@
 # pip install webdriver_manager
 # pip install chromedriver-autoinstaller
 from asyncio.windows_events import NULL
-from contextlib import nullcontext
+# from contextlib import nullcontext
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 import chromedriver_autoinstaller
@@ -11,7 +11,7 @@ from selenium.webdriver.chrome.service import Service as ChromeService
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 
-chromedriver_autoinstaller.install()  # Check if the current version of chromedriver exists
+# chromedriver_autoinstaller.install()  # Check if the current version of chromedriver exists
                                       # and if it doesn't exist, download it automatically,
                                       # then add chromedriver to path
 # service = Service(executable_path=ChromeDriverManager().install())
