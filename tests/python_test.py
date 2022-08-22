@@ -1,7 +1,7 @@
 # pip install selenium
 # pip install webdriver_manager
 # pip install chromedriver-autoinstaller
-from asyncio.windows_events import NULL
+# from asyncio.windows_events import NULL
 # from contextlib import nullcontext
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
