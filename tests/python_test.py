@@ -14,16 +14,21 @@ from selenium.webdriver.support.ui import WebDriverWait
 # service = Service(executable_path=ChromeDriverManager().install())
 
 # driver = webdriver.Chrome(service=ChromeService(executable_path=ChromeDriverManager().install()))
+
+
 from selenium.webdriver.chrome.options import Options as ChromeOptions
-options = webdriver.ChromeOptions()
+service = Service(executable_path=ChromeDriverManager().install())
+options = selenium.webdriver.ChromeOptions()
+# options = webdriver.ChromeOptions()
 options.add_argument("--no-sandbox")
 # # options.add_argument("--remote-debugging-port=9222")
 options.headless = True
+driver = selenium.webdriver.Chrome(service=service, options=options)
 # # command_executor = "http://localhost:4444/wd/hub"
 # # driver = webdriver.Remote(command_executor, desired_capabilities=options.to_capabilities())
 # # driver.get("https://google.com")
 # # options = ChromeOptions()
-driver = webdriver.Chrome(options=options)
+# driver = webdriver.Chrome(options=options)
 
 
 driver.get ("https://www.facebook.com")
