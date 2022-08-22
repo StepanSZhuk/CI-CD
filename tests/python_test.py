@@ -15,7 +15,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 
 # driver = webdriver.Chrome(service=ChromeService(executable_path=ChromeDriverManager().install()))
 
-
+import selenium
 from selenium.webdriver.chrome.options import Options as ChromeOptions
 service = ChromeService(executable_path=ChromeDriverManager().install())
 options = selenium.webdriver.ChromeOptions()
