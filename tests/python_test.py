@@ -16,10 +16,10 @@ chromedriver_autoinstaller.install()  # Check if the current version of chromedr
                                       # then add chromedriver to path
 # service = Service(executable_path=ChromeDriverManager().install())
 
-# driver = webdriver.Chrome(service=ChromeService(executable_path=ChromeDriverManager().install()))
-from selenium.webdriver.chrome.options import Options as ChromeOptions
-options = ChromeOptions()
-driver = webdriver.Chrome(options=options)
+driver = webdriver.Chrome(service=ChromeService(executable_path=ChromeDriverManager().install()))
+# from selenium.webdriver.chrome.options import Options as ChromeOptions
+# options = ChromeOptions()
+# driver = webdriver.Chrome(options=options)
 
 # driver = webdriver.Chrome(service=service)
 # driver = webdriver.Chrome()
