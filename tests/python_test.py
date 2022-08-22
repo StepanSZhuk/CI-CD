@@ -17,7 +17,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 
 
 from selenium.webdriver.chrome.options import Options as ChromeOptions
-service = Service(executable_path=ChromeDriverManager().install())
+service = ChromeService(executable_path=ChromeDriverManager().install())
 options = selenium.webdriver.ChromeOptions()
 # options = webdriver.ChromeOptions()
 options.add_argument("--no-sandbox")
