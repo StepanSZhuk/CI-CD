@@ -15,10 +15,10 @@ from selenium.webdriver.support.ui import WebDriverWait
 
 # driver = webdriver.Chrome(service=ChromeService(executable_path=ChromeDriverManager().install()))
 
-import selenium
+# import selenium
 from selenium.webdriver.chrome.options import Options as ChromeOptions
 service = ChromeService(executable_path=ChromeDriverManager().install())
-options = selenium.webdriver.ChromeOptions()
+options = webdriver.ChromeOptions()
 # options = webdriver.ChromeOptions()
 options.add_argument("--no-sandbox")
 # # options.add_argument("--remote-debugging-port=9222")
