@@ -26,9 +26,6 @@ options.headless = True
 driver = webdriver.Chrome(options=options)
 
 
-# driver.get("https://192.168.59.100:32008")
-
-
 driver.get ("https://www.facebook.com")
 driver.find_element(By.ID, 'email').send_keys('fakeemail@crossbrowsertesting.com')
 
