@@ -23,7 +23,7 @@ options = webdriver.ChromeOptions()
 options.add_argument("--no-sandbox")
 # # options.add_argument("--remote-debugging-port=9222")
 options.headless = True
-driver = selenium.webdriver.Chrome(service=service, options=options)
+driver = webdriver.Chrome(service=service, options=options)
 # # command_executor = "http://localhost:4444/wd/hub"
 # # driver = webdriver.Remote(command_executor, desired_capabilities=options.to_capabilities())
 # # driver.get("https://google.com")
