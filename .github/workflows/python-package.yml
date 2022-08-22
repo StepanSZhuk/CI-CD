@@ -28,7 +28,7 @@ jobs:
         
 
     - uses: browser-actions/setup-chrome@latest
-    - name: Install Chrome
+#     - name: Install Chrome
     - run: chrome --version
     
     - name: Install dependencies
