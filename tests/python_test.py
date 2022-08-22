@@ -42,7 +42,7 @@ driver = webdriver.Chrome(options=options)
 
 
 
-# driver.get ("https://www.facebook.com")
+driver.get ("https://www.facebook.com")
 # driver.find_element(By.ID, 'email').send_keys('fakeemail@crossbrowsertesting.com')
 
 # driver.find_element(By.ID, 'pass').send_keys('fakepassword1')
