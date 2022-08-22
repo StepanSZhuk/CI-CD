@@ -16,7 +16,9 @@ from selenium.webdriver.support.ui import WebDriverWait
                                       # then add chromedriver to path
 # service = Service(executable_path=ChromeDriverManager().install())
 
-driver = webdriver.Chrome(service=ChromeService(executable_path=ChromeDriverManager().install()))
+# driver = webdriver.Chrome(service=ChromeService(executable_path=ChromeDriverManager().install()))
+service = FirefoxService(executable_path=GeckoDriverManager().install())
+driver = webdriver.Firefox(service=service)
 
 # driver = webdriver.Chrome(service=service)
 # driver = webdriver.Chrome()
