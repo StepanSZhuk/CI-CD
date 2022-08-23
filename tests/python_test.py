@@ -43,7 +43,7 @@ driver.find_element(By.NAME, 'login').click()
 
 # driver.implicitly_wait(10)
 # wait the ready state to be complete
-WebDriverWait(driver=driver, timeout=20).until(
+WebDriverWait(driver=driver, timeout=30).until(
     lambda x: x.execute_script("return document.readyState === 'complete'")
 )
 error_message = "Find your account and log in."
@@ -56,7 +56,7 @@ errors = driver.find_elements(By.LINK_TEXT, "Find your account and log in.")
 # if we find that error message within errors, then login is failed
 
 # assert 'admin' not in driver.page_source
-assert 'Find your account and log in.' not in driver.page_source
+assert 'Find your account and log in.' in driver.page_source
 print(driver.page_source)
 
 # if any(error_message in e.text for e in errors):
