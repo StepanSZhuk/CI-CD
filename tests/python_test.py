@@ -42,7 +42,7 @@ driver.find_element(By.ID, 'pass').send_keys('fakepassword1')
 driver.find_element(By.NAME, 'login').click()
 
 # wait the ready state to be complete
-WebDriverWait(driver=driver, timeout=10).until(
+WebDriverWait(driver=driver, timeout=20).until(
     lambda x: x.execute_script("return document.readyState === 'complete'")
 )
 error_message = "Find your account and log in."
