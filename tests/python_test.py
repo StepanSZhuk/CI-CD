@@ -19,7 +19,7 @@ options = [
   # Define window size here
    "--window-size=1200,1200",
    "--ignore-certificate-errors",
-   "--headless"
+#    "--headless"
     #"--disable-gpu",
     #"--disable-extensions",
    "--no-sandbox",
