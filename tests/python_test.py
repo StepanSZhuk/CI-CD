@@ -32,6 +32,11 @@ for option in options:
 
 driver = webdriver.Chrome(options = chrome_options)
 
+# driver.implicitly_wait(10)
+# wait the ready state to be complete
+WebDriverWait(driver=driver, timeout=30).until(
+    lambda x: x.execute_script("return document.readyState === 'complete'")
+)
 
 driver.get ("https://www.facebook.com")
 driver.find_element(By.ID, 'email').send_keys('fakeemail@crossbrowsertesting.com')
@@ -41,11 +46,6 @@ driver.find_element(By.ID, 'pass').send_keys('fakepassword1')
 # driver.find_element(By.ID, 'loginbutton').click()
 driver.find_element(By.NAME, 'login').click()
 
-# driver.implicitly_wait(10)
-# wait the ready state to be complete
-WebDriverWait(driver=driver, timeout=30).until(
-    lambda x: x.execute_script("return document.readyState === 'complete'")
-)
 error_message = "Find your account and log in."
 # get the errors (if there are)
 errors = driver.find_elements(By.LINK_TEXT, "Find your account and log in.")
