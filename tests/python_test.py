@@ -35,11 +35,12 @@ driver = webdriver.Chrome(options = chrome_options)
 
 driver.get ("https://www.facebook.com")
 driver.find_element(By.ID, 'email').send_keys('fakeemail@crossbrowsertesting.com')
-
+# print(driver.find_element(By.ID, 'email').send_keys('fakeemail@crossbrowsertesting.com'))
 driver.find_element(By.ID, 'pass').send_keys('fakepassword1')
 
+
 # driver.find_element(By.ID, 'loginbutton').click()
-d = driver.find_element(By.NAME, 'login').click()
+driver.find_element(By.NAME, 'login').click()
 
 # wait the ready state to be complete
 WebDriverWait(driver=driver, timeout=10).until(
