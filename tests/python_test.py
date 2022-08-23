@@ -55,7 +55,8 @@ errors = driver.find_elements(By.LINK_TEXT, "Find your account and log in.")
 # if we find that error message within errors, then login is failed
 if any(error_message in e.text for e in errors):
     print("Test PASSED. Login Failed")
+    print(driver.title)
 else:
     print("Test Failed. Login successful")
-
+    print(driver.title)
 driver.quit()
