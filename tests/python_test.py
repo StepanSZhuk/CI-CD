@@ -56,7 +56,7 @@ errors = driver.find_elements(By.LINK_TEXT, "Find your account and log in.")
 
 # assert 'admin' not in driver.page_source
 print(driver.page_source)
-assert "Find your account and log in." in driver.page_source
+assert 'Find your account and log in.' in driver.page_source
 
 
 # if any(error_message in e.text for e in errors):
