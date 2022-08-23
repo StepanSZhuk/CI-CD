@@ -41,6 +41,7 @@ driver.find_element(By.ID, 'pass').send_keys('fakepassword1')
 # driver.find_element(By.ID, 'loginbutton').click()
 driver.find_element(By.NAME, 'login').click()
 
+driver.implicitly_wait(10)
 # wait the ready state to be complete
 WebDriverWait(driver=driver, timeout=20).until(
     lambda x: x.execute_script("return document.readyState === 'complete'")
