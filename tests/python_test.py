@@ -7,6 +7,7 @@ import chromedriver_autoinstaller
 from pyvirtualdisplay import Display
 display = Display(visible=0, size=(800, 800))  
 display.start()
+from selenium.webdriver.common.keys import Keys
 
 
 chromedriver_autoinstaller.install()  # Check if the current version of chromedriver exists
