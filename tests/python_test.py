@@ -7,7 +7,6 @@ import chromedriver_autoinstaller
 from pyvirtualdisplay import Display
 display = Display(visible=0, size=(800, 800))  
 display.start()
-from selenium.webdriver.common.keys import Keys
 
 
 chromedriver_autoinstaller.install()  # Check if the current version of chromedriver exists
@@ -39,8 +38,6 @@ driver.find_element(By.ID, 'email').send_keys('fakeemail@crossbrowsertesting.com
 
 driver.find_element(By.ID, 'pass').send_keys('fakepassword1')
 
-submit = driver.find_element(By.NAME, 'login')
-
 # driver.find_element(By.ID, 'loginbutton').click()
 driver.find_element(By.NAME, 'login').click()
 
@@ -57,7 +54,6 @@ errors = driver.find_elements(By.LINK_TEXT, "Find your account and log in.")
 #     print(e.text)
 # if we find that error message within errors, then login is failed
 
-submit.send_keys(Keys.RETURN)
 assert 'admin' not in driver.page_source
 # if any(error_message in e.text for e in errors):
 #     print("Test PASSED. Login Failed")
