@@ -1,36 +1,39 @@
-# pip install selenium
-# pip install webdriver_manager
-# pip install chromedriver-autoinstaller
 from selenium import webdriver
-from webdriver_manager.chrome import ChromeDriverManager
-import chromedriver_autoinstaller
-from selenium.webdriver.chrome.service import Service as ChromeService
+from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
+import chromedriver_autoinstaller
+from pyvirtualdisplay import Display
+display = Display(visible=0, size=(800, 800))  
+display.start()
 
-# chromedriver_autoinstaller.install()  # Check if the current version of chromedriver exists
+
+chromedriver_autoinstaller.install()  # Check if the current version of chromedriver exists
                                       # and if it doesn't exist, download it automatically,
                                       # then add chromedriver to path
-# service = Service(executable_path=ChromeDriverManager().install())
 
-# driver = webdriver.Chrome(service=ChromeService(executable_path=ChromeDriverManager().install()))
+chrome_options = webdriver.ChromeOptions()    
+# Add your options as needed    
+options = [
+  # Define window size here
+   "--window-size=1200,1200",
+   "--ignore-certificate-errors"
+ 
+    #"--headless",
+    #"--disable-gpu",
+    #"--window-size=1920,1200",
+    #"--ignore-certificate-errors",
+    #"--disable-extensions",
+    #"--no-sandbox",
+    #"--disable-dev-shm-usage",
+    #'--remote-debugging-port=9222'
+]
 
-# import selenium
-from selenium.webdriver.chrome.options import Options as ChromeOptions
-service = ChromeService(executable_path=ChromeDriverManager().install())
-options = webdriver.ChromeOptions()
-# options = webdriver.ChromeOptions()
-options.add_argument("--no-sandbox")
-options.add_argument("--disable-dev-shm-usage")
-# # options.add_argument("--remote-debugging-port=9222")
-options.add_argument("--headless")
-# options.headless = True
-driver = webdriver.Chrome(service=service, options=options)
-# # command_executor = "http://localhost:4444/wd/hub"
-# # driver = webdriver.Remote(command_executor, desired_capabilities=options.to_capabilities())
-# # driver.get("https://google.com")
-# # options = ChromeOptions()
-# driver = webdriver.Chrome(options=options)
+for option in options:
+    chrome_options.add_argument(option)
+
+driver = webdriver.Chrome(options = chrome_options)
 
 
 driver.get ("https://www.facebook.com")
