@@ -27,7 +27,7 @@ options = [
    "--disable-extensions",
    "--no-sandbox",
    "--disable-dev-shm-usage",
-   "--remote-debugging-port=9222"
+#    "--remote-debugging-port=9222"
 ]
 
 for option in options:
