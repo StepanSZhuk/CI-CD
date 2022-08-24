@@ -6,6 +6,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 import chromedriver_autoinstaller
 from pyvirtualdisplay import Display
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 display = Display(visible=0, size=(800, 800))  
 display.start()
 
@@ -15,7 +16,8 @@ chromedriver_autoinstaller.install()  # Check if the current version of chromedr
                                       # and if it doesn't exist, download it automatically,
                                       # then add chromedriver to path
 
-chrome_options = webdriver.ChromeOptions()    
+chrome_options = webdriver.ChromeOptions()
+chrome_options.set_capability('bstack:options', bstack_options)
 # Add your options as needed    
 options = [
   # Define window size here
@@ -46,9 +48,9 @@ driver.find_element(By.ID, 'email').send_keys('fakeemail@crossbrowsertesting.com
 driver.find_element(By.ID, 'pass').send_keys('fakepassword1')
 
 # driver.find_element(By.ID, 'loginbutton').click()
-elem = driver.find_element(By.NAME, 'login').click()
+driver.find_element(By.NAME, 'login').click()
 
-elem.send_keys(Keys.RETURN)
+# elem.send_keys(Keys.RETURN)
 
 error_message = "Find your account and log in."
 # get the errors (if there are)
