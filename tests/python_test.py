@@ -121,8 +121,32 @@ driver.find_element(By.NAME, 'login').click()
 driver.implicitly_wait(20)
 
 
-print(driver.page_source)
+# print(driver.page_source)
 # assert 'Find your account and log in.' in driver.page_source
+
+error_message = "Find your account and log in."
+# get the errors (if there are)
+errors = driver.find_elements(By.LINK_TEXT, "Find your account and log in.")
+
+# # print the errors optionally
+# # for e in errors:
+# #     print(e.text)
+# # if we find that error message within errors, then login is failed
+
+# # assert 'admin' not in driver.page_source
+# # print(driver.page_source)
+# assert 'Find your account and log in.' in driver.page_source
+
+
+if any(error_message in e.text for e in errors):
+    print("Test PASSED. Login Failed")
+#     print(driver.title)
+#     print(driver.page_source)
+else:
+    print("Test Failed. Login successful")
+#     print(driver.title)
+#     print(driver.page_source)
+driver.quit()
 
 # driver.get('http://nytimes.com')
 # print(driver.title)
