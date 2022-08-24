@@ -6,7 +6,6 @@ from selenium.webdriver.support.ui import WebDriverWait
 import chromedriver_autoinstaller
 from pyvirtualdisplay import Display
 from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 display = Display(visible=0, size=(800, 800))  
 display.start()
 
@@ -17,7 +16,7 @@ chromedriver_autoinstaller.install()  # Check if the current version of chromedr
                                       # then add chromedriver to path
 
 chrome_options = webdriver.ChromeOptions()
-chrome_options.set_capability('bstack:options', bstack_options)
+
 # Add your options as needed    
 options = [
   # Define window size here
