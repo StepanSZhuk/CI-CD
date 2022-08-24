@@ -26,7 +26,7 @@ options = [
    "--disable-gpu",
    "--disable-extensions",
    "--no-sandbox",
-   "--disable-dev-shm-usage",
+#    "--disable-dev-shm-usage",
 #    "--remote-debugging-port=9222"
 ]
 
