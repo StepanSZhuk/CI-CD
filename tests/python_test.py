@@ -86,6 +86,7 @@ from webdriver_manager.core.utils import ChromeType
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
 
 chrome_service = Service(ChromeDriverManager(chrome_type=ChromeType.CHROMIUM).install())
 
@@ -103,6 +104,11 @@ for option in options:
     chrome_options.add_argument(option)
 
 driver = webdriver.Chrome(service=chrome_service, options=chrome_options)
+
+# wait the ready state to be complete
+WebDriverWait(driver=driver, timeout=20).until(
+    lambda x: x.execute_script("return document.readyState === 'complete'")
+)
 
 driver.get ("https://www.facebook.com")
 driver.find_element(By.ID, 'email').send_keys('fakeemail@crossbrowsertesting.com')
