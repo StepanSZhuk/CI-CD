@@ -21,13 +21,13 @@ chrome_options = webdriver.ChromeOptions()
 options = [
   # Define window size here
    "--window-size=1200,1200",
-   "--ignore-certificate-errors"
-   "--headless"
-    #"--disable-gpu",
-    #"--disable-extensions",
+   "--ignore-certificate-errors",
+   "--headless",
+   "--disable-gpu",
+   "--disable-extensions",
    "--no-sandbox",
-#    "--disable-dev-shm-usage",
-#    '--remote-debugging-port=9222'
+   "--disable-dev-shm-usage",
+   "--remote-debugging-port=9222"
 ]
 
 for option in options:
@@ -65,7 +65,7 @@ errors = driver.find_elements(By.LINK_TEXT, "Find your account and log in.")
 # if we find that error message within errors, then login is failed
 
 # assert 'admin' not in driver.page_source
-print(driver.page_source)
+# print(driver.page_source)
 assert 'Find your account and log in.' in driver.page_source
 
 
