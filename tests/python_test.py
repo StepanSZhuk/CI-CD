@@ -44,12 +44,11 @@ WebDriverWait(driver=driver, timeout=30).until(
 driver.get ("https://www.facebook.com")
 driver.find_element(By.ID, 'email').send_keys('fakeemail@crossbrowsertesting.com')
 
-driver.find_element(By.ID, 'pass').send_keys('fakepassword1')
+elem = driver.find_element(By.ID, 'pass').send_keys('fakepassword1')
+elem.send_keys(Keys.RETURN)
 
 # driver.find_element(By.ID, 'loginbutton').click()
 driver.find_element(By.NAME, 'login').click()
-
-# elem.send_keys(Keys.RETURN)
 
 error_message = "Find your account and log in."
 # get the errors (if there are)
