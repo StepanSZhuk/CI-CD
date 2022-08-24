@@ -121,8 +121,8 @@ driver.find_element(By.NAME, 'login').click()
 driver.implicitly_wait(20)
 
 
-# print(driver.page_source)
-assert 'Find your account and log in.' in driver.page_source
+print(driver.page_source)
+# assert 'Find your account and log in.' in driver.page_source
 
 # driver.get('http://nytimes.com')
 # print(driver.title)
