@@ -103,5 +103,19 @@ for option in options:
 
 driver = webdriver.Chrome(service=chrome_service, options=chrome_options)
 
-driver.get('http://nytimes.com')
-print(driver.title)
+driver.get ("https://www.facebook.com")
+driver.find_element(By.ID, 'email').send_keys('fakeemail@crossbrowsertesting.com')
+# driver.implicitly_wait(10)
+
+driver.find_element(By.ID, 'pass').send_keys('fakepassword1')
+# driver.implicitly_wait(10)
+
+driver.find_element(By.NAME, 'login').click()
+driver.implicitly_wait(20)
+
+
+# print(driver.page_source)
+assert 'Find your account and log in.' in driver.page_source
+
+# driver.get('http://nytimes.com')
+# print(driver.title)
