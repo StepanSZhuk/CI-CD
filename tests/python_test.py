@@ -44,7 +44,9 @@ WebDriverWait(driver=driver, timeout=30).until(
 driver.get ("https://www.facebook.com")
 driver.find_element(By.ID, 'email').send_keys('fakeemail@crossbrowsertesting.com')
 
-elem = driver.find_element(By.ID, 'pass').send_keys('fakepassword1')
+# driver.find_element(By.ID, 'pass').send_keys('fakepassword1')
+driver.find_element(By.ID, 'pass')
+elem = driver.send_keys('fakepassword1')
 elem.send_keys(Keys.RETURN)
 
 # driver.find_element(By.ID, 'loginbutton').click()
