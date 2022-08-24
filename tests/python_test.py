@@ -37,7 +37,7 @@ driver = webdriver.Chrome(options = chrome_options)
 
 # driver.implicitly_wait(10)
 # wait the ready state to be complete
-WebDriverWait(driver=driver, timeout=10).until(
+WebDriverWait(driver=driver, timeout=20).until(
     lambda x: x.execute_script("return document.readyState === 'complete'")
 )
 
