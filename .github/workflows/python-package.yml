@@ -45,5 +45,5 @@ jobs:
     - name: Test of Authorization
       run: |
        #pytest ./tests/python_test.py
-       python ./tests/python_test.py 
+       python ./tests/python_test.py --headless
         
