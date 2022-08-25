@@ -113,30 +113,20 @@ WebDriverWait(driver=driver, timeout=20).until(
 )
 
 driver.get ("https://www.facebook.com")
-# time.sleep(50)
+
 driver.find_element(By.ID, 'email').send_keys('fakeemail@crossbrowsertesting.com')
-# driver.implicitly_wait(10)
-# time.sleep(30)
+
 driver.find_element(By.ID, 'pass').send_keys('fakepassword1')
-# time.sleep(30)
-# driver.implicitly_wait(10)
 
 driver.find_element(By.NAME, 'login').click()
-# driver.implicitly_wait(20)
-# time.sleep(100)
-
-
-# print(driver.page_source)
-# assert 'Find your account and log in.' in driver.page_source
 
 error_message = "Invalid username or password"
 # get the errors (if there are)
 errors = driver.find_elements(By.LINK_TEXT, "Invalid username or password")
 
 # # print the errors optionally
-# # for e in errors:
-# #     print(e.text)
-# # if we find that error message within errors, then login is failed
+for e in errors:
+    print(e.text)
 
 # # assert 'admin' not in driver.page_source
 # print(driver.page_source)
