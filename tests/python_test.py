@@ -98,7 +98,7 @@ driver.find_element(By.NAME, 'login').click()
 # driver.implicitly_wait(20)
 # error_message = "Find your account and log in."
 # get the errors (if there are)
-errors = driver.find_elements(By.LINK_TEXT, "Find your account and log in.")
+# errors = driver.find_elements(By.LINK_TEXT, "Find your account and log in.")
 
 # # # print the errors optionally
 # for e in errors:
