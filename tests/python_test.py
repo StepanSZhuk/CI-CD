@@ -35,7 +35,6 @@ for option in options:
 
 driver = webdriver.Chrome(options = chrome_options)
 
-# driver.implicitly_wait(10)
 # wait the ready state to be complete
 WebDriverWait(driver=driver, timeout=20).until(
     lambda x: x.execute_script("return document.readyState === 'complete'")
@@ -43,41 +42,19 @@ WebDriverWait(driver=driver, timeout=20).until(
 
 driver.get ("https://www.facebook.com")
 driver.find_element(By.ID, 'email').send_keys('fakeemail@crossbrowsertesting.com')
-# driver.implicitly_wait(10)
 
 driver.find_element(By.ID, 'pass').send_keys('fakepassword1')
-# driver.implicitly_wait(10)
-# elem = driver.find_element(By.ID, 'pass')
-# elem.send_keys('fakepassword1')
-# elem.send_keys(Keys.RETURN)
 
-# driver.find_element(By.ID, 'loginbutton').click()
 driver.find_element(By.NAME, 'login').click()
-driver.implicitly_wait(20)
+# driver.implicitly_wait(20)
 
-error_message = "Invalid username or password"
-# get the errors (if there are)
-errors = driver.find_elements(By.LINK_TEXT, "Invalid username or password")
 
-# print the errors optionally
-for e in errors:
-    print(e.text)
-
-# assert 'admin' not in driver.page_source
 # print(driver.page_source)
 assert 'Invalid username or password.' in driver.page_source
-
-
-# if any(error_message in e.text for e in errors):
-#     print("Test PASSED. Login Failed")
-#     print(driver.title)
-#     print(driver.page_source)
-# else:
-#     print("Test Failed. Login successful")
-#     print(driver.title)
-#     print(driver.page_source)
 driver.quit()
 
+
+#########################################
 
 # from selenium import webdriver
 # from webdriver_manager.chrome import ChromeDriverManager
