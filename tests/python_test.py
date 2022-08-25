@@ -67,7 +67,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 chrome_service = Service(ChromeDriverManager(chrome_type=ChromeType.CHROMIUM).install())
 
 chrome_options = Options()
-# chrome_options.add_experimental_option('excludeSwitches', ['enable-logging'])
+chrome_options.add_experimental_option('excludeSwitches', ['enable-logging'])
 options = [
     "--headless",
     "--disable-gpu",
