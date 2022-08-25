@@ -67,7 +67,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 chrome_service = Service(ChromeDriverManager(chrome_type=ChromeType.CHROMIUM).install())
 
 chrome_options = Options()
-chrome_options.add_experimental_option('excludeSwitches', ['enable-logging'])
+# chrome_options.add_experimental_option('excludeSwitches', ['enable-logging'])
 options = [
     "--headless",
     "--disable-gpu",
@@ -95,9 +95,9 @@ driver.find_element(By.ID, 'pass').send_keys('fakepassword1')
 
 driver.find_element(By.NAME, 'login').click()
 
-error_message = "Invalid username or password"
-# get the errors (if there are)
-errors = driver.find_elements(By.LINK_TEXT, "Invalid username or password")
+# error_message = "Invalid username or password"
+# # get the errors (if there are)
+# errors = driver.find_elements(By.LINK_TEXT, "Invalid username or password")
 
 # # # print the errors optionally
 # for e in errors:
@@ -105,7 +105,7 @@ errors = driver.find_elements(By.LINK_TEXT, "Invalid username or password")
 
 # # assert 'admin' not in driver.page_source
 # print(driver.page_source)
-assert 'Invalid username or password' in driver.page_source
+assert 'Invalid username or password.' in driver.page_source
 
 
 # if any(error_message in e.text for e in errors):
