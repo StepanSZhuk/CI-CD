@@ -133,15 +133,12 @@ print(driver.page_source)
 assert 'Invalid username or password' in driver.page_source
 
 
-if any(error_message in e.text for e in errors):
-    print("Test PASSED. Login Failed")
-#     print(driver.title)
-#     print(driver.page_source)
-else:
-    print("Test Failed. Login successful")
-#     print(driver.title)
-#     print(driver.page_source)
+# if any(error_message in e.text for e in errors):
+#     print("Test PASSED. Login Failed")
+# #     print(driver.title)
+# #     print(driver.page_source)
+# else:
+#     print("Test Failed. Login successful")
+# #     print(driver.title)
+# #     print(driver.page_source)
 driver.quit()
-
-# driver.get('http://nytimes.com')
-# print(driver.title)
