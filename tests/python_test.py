@@ -129,9 +129,9 @@ driver.find_element(By.NAME, 'login').click()
 # print(driver.page_source)
 # assert 'Find your account and log in.' in driver.page_source
 
-error_message = "Find your account and log in."
+error_message = "Invalid username or password"
 # get the errors (if there are)
-errors = driver.find_elements(By.LINK_TEXT, "Find your account and log in.")
+errors = driver.find_elements(By.LINK_TEXT, "Invalid username or password")
 
 # # print the errors optionally
 # # for e in errors:
