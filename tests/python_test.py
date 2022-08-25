@@ -124,9 +124,9 @@ error_message = "Invalid username or password"
 # get the errors (if there are)
 errors = driver.find_elements(By.LINK_TEXT, "Invalid username or password")
 
-# # print the errors optionally
-for e in errors:
-    print(e.text)
+# # # print the errors optionally
+# for e in errors:
+#     print(e.text)
 
 # # assert 'admin' not in driver.page_source
 print(driver.page_source)
