@@ -95,7 +95,7 @@ driver.find_element(By.ID, 'pass').send_keys('fakepassword1')
 
 driver.find_element(By.NAME, 'login').click()
 
-# driver.implicitly_wait(20)
+driver.implicitly_wait(20)
 # error_message = "Invalid username or password"
 # # get the errors (if there are)
 # errors = driver.find_elements(By.LINK_TEXT, "Invalid username or password")
