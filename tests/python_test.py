@@ -9,8 +9,6 @@ from selenium.webdriver.common.keys import Keys
 display = Display(visible=0, size=(1200,1200))  
 display.start()
 
-
-
 chromedriver_autoinstaller.install()  # Check if the current version of chromedriver exists
                                       # and if it doesn't exist, download it automatically,
                                       # then add chromedriver to path
@@ -50,7 +48,7 @@ driver.find_element(By.NAME, 'login').click()
 
 
 # print(driver.page_source)
-assert 'Invalid username or password.' in driver.page_source
+assert 'Invalid username or password' in driver.page_source
 driver.quit()
 
 
