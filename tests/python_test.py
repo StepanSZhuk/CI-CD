@@ -64,7 +64,8 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 # import time
 
-chrome_service = Service(ChromeDriverManager(chrome_type=ChromeType.CHROMIUM).install())
+# chrome_service = Service(ChromeDriverManager(chrome_type=ChromeType.CHROMIUM).install())
+chrome_service = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
 
 chrome_options = Options()
 chrome_options.add_experimental_option('excludeSwitches', ['enable-logging'])
@@ -106,7 +107,7 @@ errors = driver.find_elements(By.LINK_TEXT, "Find your account and log in.")
 
 # # assert 'admin' not in driver.page_source
 # print(driver.page_source)
-assert 'Invalid username or password.' in driver.page_source
+assert 'Invalid username or password' in driver.page_source
 
 
 # if any(error_message in e.text for e in errors):
