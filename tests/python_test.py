@@ -44,7 +44,7 @@ driver.find_element(By.ID, 'email').send_keys('fakeemail@crossbrowsertesting.com
 driver.find_element(By.ID, 'pass').send_keys('fakepassword1')
 
 driver.find_element(By.NAME, 'login').click()
-# driver.implicitly_wait(20)
+driver.implicitly_wait(20)
 
 
 # print(driver.page_source)
