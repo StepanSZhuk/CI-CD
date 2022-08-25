@@ -130,7 +130,7 @@ for e in errors:
 
 # # assert 'admin' not in driver.page_source
 # print(driver.page_source)
-assert 'Invalid username or password' in driver.page_source
+assert 'Invalid username or password.' in driver.page_source
 
 
 # if any(error_message in e.text for e in errors):
