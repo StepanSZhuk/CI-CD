@@ -113,17 +113,17 @@ WebDriverWait(driver=driver, timeout=20).until(
 )
 
 driver.get ("https://www.facebook.com")
-time.sleep(5000)
+time.sleep(500)
 driver.find_element(By.ID, 'email').send_keys('fakeemail@crossbrowsertesting.com')
 # driver.implicitly_wait(10)
-time.sleep(3000)
+time.sleep(300)
 driver.find_element(By.ID, 'pass').send_keys('fakepassword1')
-time.sleep(3000)
+time.sleep(300)
 # driver.implicitly_wait(10)
 
 driver.find_element(By.NAME, 'login').click()
 # driver.implicitly_wait(20)
-time.sleep(10000)
+time.sleep(1000)
 
 
 # print(driver.page_source)
