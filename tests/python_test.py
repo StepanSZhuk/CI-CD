@@ -87,6 +87,7 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
+import time
 
 chrome_service = Service(ChromeDriverManager(chrome_type=ChromeType.CHROMIUM).install())
 
@@ -112,14 +113,17 @@ WebDriverWait(driver=driver, timeout=20).until(
 )
 
 driver.get ("https://www.facebook.com")
+time.sleep(5000)
 driver.find_element(By.ID, 'email').send_keys('fakeemail@crossbrowsertesting.com')
 # driver.implicitly_wait(10)
-
+time.sleep(3000)
 driver.find_element(By.ID, 'pass').send_keys('fakepassword1')
+time.sleep(3000)
 # driver.implicitly_wait(10)
 
 driver.find_element(By.NAME, 'login').click()
-driver.implicitly_wait(20)
+# driver.implicitly_wait(20)
+time.sleep(10000)
 
 
 # print(driver.page_source)
