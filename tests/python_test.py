@@ -63,8 +63,6 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 # import time
-import Screenshot
-from Screenshot import Screenshot_Clipping
 
 chrome_service = Service(ChromeDriverManager(chrome_type=ChromeType.CHROMIUM).install())
 
@@ -103,8 +101,6 @@ driver.find_element(By.NAME, 'login').click()
 errors = driver.find_elements(By.LINK_TEXT, "Find your account and log in.")
 driver.get_screenshot_as_file("Screen.png")
 
-ob=Screenshot_Clipping.Screenshot()
-img_url=ob.full_Screenshot(driver, save_path=r'.', image_name='Screen.png') 
 
 # # # print the errors optionally
 # for e in errors:
