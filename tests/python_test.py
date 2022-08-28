@@ -100,7 +100,8 @@ driver.find_element(By.NAME, 'login').click()
 # get the errors (if there are)
 errors = driver.find_elements(By.LINK_TEXT, "Find your account and log in.")
 # driver.get_screenshot_as_file("Screen.png")
-from Screenshot import Screenshot_Clipping 
+from Screenshot import Screenshot_Clipping
+ob=Screenshot_Clipping.Screenshot()
 img_url=ob.full_Screenshot(driver, save_path=r'.', image_name='Screen.png') 
 
 # # # print the errors optionally
