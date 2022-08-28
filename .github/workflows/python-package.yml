@@ -39,7 +39,7 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        python -m pip install selenium==4.4.3 webdriver-manager==3.8.3 chromedriver-autoinstaller==0.4.0 pyvirtualdisplay
+        python -m pip install selenium==4.4.3 webdriver-manager==3.8.3 chromedriver-autoinstaller==0.4.0 pyvirtualdisplay Selenium-Screenshot
         #python -m pip install flake8 pytest
         #if ( -f ./tests/requirements.txt ); then pip install -r requirements.txt; fi
 
