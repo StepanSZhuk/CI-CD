@@ -99,7 +99,7 @@ driver.find_element(By.NAME, 'login').click()
 # error_message = "Find your account and log in."
 # get the errors (if there are)
 errors = driver.find_elements(By.LINK_TEXT, "Find your account and log in.")
-driver.get_screenshot_as_file("Screen.png")
+driver.get_screenshot_as_file("/tests/Screen.png")
 
 
 # # # print the errors optionally
