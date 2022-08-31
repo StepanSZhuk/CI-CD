@@ -53,10 +53,6 @@ errors = driver.find_elements(By.LINK_TEXT, "Find your account and log in.")
 driver.get_screenshot_as_file("tests/Screen.png")
 
 
-# # # print the errors optionally
-# for e in errors:
-#     print(e.text)
-
 # # assert 'admin' not in driver.page_source
 
 assert 'Invalid username or password' in driver.page_source
