@@ -1,63 +1,6 @@
-# from selenium import webdriver
-# from selenium.webdriver.chrome.options import Options
-# from selenium.webdriver.chrome.service import Service
-# from selenium.webdriver.common.by import By
-# from selenium.webdriver.support.ui import WebDriverWait
-# import chromedriver_autoinstaller
-# from pyvirtualdisplay import Display
-# from selenium.webdriver.common.keys import Keys
-# display = Display(visible=0, size=(1200,1200))  
-# display.start()
-
-# chromedriver_autoinstaller.install()  # Check if the current version of chromedriver exists
-#                                       # and if it doesn't exist, download it automatically,
-#                                       # then add chromedriver to path
-
-# chrome_options = webdriver.ChromeOptions()
-# chrome_options.add_experimental_option('excludeSwitches', ['enable-logging'])
-
-# # Add your options as needed    
-# options = [
-#   # Define window size here
-#    "--window-size=1200,1200",
-#    "--ignore-certificate-errors",
-#    "--headless",
-# #    "--disable-gpu",
-# #    "--disable-extensions",
-# #    "--no-sandbox"
-#    "--disable-dev-shm-usage"
-# #    "--remote-debugging-port=9222"
-# ]
-
-# for option in options:
-#     chrome_options.add_argument(option)
-
-# driver = webdriver.Chrome(options = chrome_options)
-
-# # wait the ready state to be complete
-# WebDriverWait(driver=driver, timeout=20).until(
-#     lambda x: x.execute_script("return document.readyState === 'complete'")
-# )
-
-# driver.get ("https://www.facebook.com")
-# driver.find_element(By.ID, 'email').send_keys('fakeemail@crossbrowsertesting.com')
-
-# driver.find_element(By.ID, 'pass').send_keys('fakepassword1')
-
-# driver.find_element(By.NAME, 'login').click()
-# driver.implicitly_wait(20)
-
-
-# # print(driver.page_source)
-# assert 'Invalid username or password' in driver.page_source
-# driver.quit()
-
-
-#########################################
-
 import os
-test_email = os.environ['TEST_EMAIL']
-test_password = os.environ['TEST_PASSWORD']
+test_email = os.environ.get("TEST_EMAIL")
+test_password = os.environ.get("TEST_PASSWORD")
 
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
@@ -94,12 +37,12 @@ WebDriverWait(driver=driver, timeout=20).until(
 driver.get ("https://www.facebook.com")
 
 # driver.find_element(By.ID, 'email').send_keys('fakeemail@crossbrowsertesting.com')
-# print(test_email)
-# driver.find_element(By.ID, 'email').send_keys(test_email)
+print(test_email)
+driver.find_element(By.ID, 'email').send_keys(test_email)
 
 # driver.find_element(By.ID, 'pass').send_keys('fakepassword1')
-# driver.find_element(By.ID, 'pass').send_keys(test_password)
-# print(test_password)
+driver.find_element(By.ID, 'pass').send_keys(test_password)
+print(test_password)
 
 driver.find_element(By.NAME, 'login').click()
 
