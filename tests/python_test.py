@@ -9,7 +9,7 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
-# import time
+import time
 
 chrome_service = Service(ChromeDriverManager(chrome_type=ChromeType.CHROMIUM).install())
 
@@ -46,6 +46,7 @@ driver.find_element(By.ID, 'pass').send_keys('fakepassword1')
 
 driver.find_element(By.NAME, 'login').click()
 
+time.sleep(5)
 # driver.implicitly_wait(20)
 # error_message = "Find your account and log in."
 # get the errors (if there are)
