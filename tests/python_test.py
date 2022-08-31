@@ -94,10 +94,12 @@ WebDriverWait(driver=driver, timeout=20).until(
 driver.get ("https://www.facebook.com")
 
 # driver.find_element(By.ID, 'email').send_keys('fakeemail@crossbrowsertesting.com')
+print(test_email)
 driver.find_element(By.ID, 'email').send_keys(test_email)
 
 # driver.find_element(By.ID, 'pass').send_keys('fakepassword1')
 driver.find_element(By.ID, 'pass').send_keys(test_password)
+print(test_password)
 
 driver.find_element(By.NAME, 'login').click()
 
@@ -115,7 +117,7 @@ driver.get_screenshot_as_file("tests/Screen.png")
 # # assert 'admin' not in driver.page_source
 
 assert 'Invalid username or password' in driver.page_source
-print(driver.page_source)
+# print(driver.page_source)
 
 
 # if any(error_message in e.text for e in errors):
