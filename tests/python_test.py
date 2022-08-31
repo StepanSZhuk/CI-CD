@@ -1,6 +1,6 @@
 import os
-test_email = os.environ.get("TEST_EMAIL")
-test_password = os.environ.get("TEST_PASSWORD")
+test_email = os.environ.get('TEST_EMAIL')
+test_password = os.environ.get('TEST_PASSWORD')
 
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
