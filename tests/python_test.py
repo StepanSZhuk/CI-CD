@@ -1,4 +1,4 @@
-import os
+# import os
 # test_email = os.environ.get('TEST_EMAIL')
 # test_password = os.environ.get('TEST_PASSWORD')
 
@@ -50,7 +50,7 @@ time.sleep(5)
 # driver.implicitly_wait(20)
 # error_message = "Find your account and log in."
 # get the errors (if there are)
-errors = driver.find_elements(By.LINK_TEXT, "Find your account and log in.")
+# errors = driver.find_elements(By.LINK_TEXT, "Find your account and log in.")
 driver.get_screenshot_as_file("tests/Screen.png")
 
 
