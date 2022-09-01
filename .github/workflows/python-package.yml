@@ -38,8 +38,8 @@ jobs:
 
     - name: Test of Authorization
       env:
-          TEST_EMAIL: ${{ secrets.TEST_EMAIL }}
-          TEST_PASSWORD: ${{ secrets.TEST_PASSWORD }}
+          TEST_EMAIL: '${{ secrets.TEST_EMAIL }}'
+          TEST_PASSWORD: '${{ secrets.TEST_PASSWORD }}'
       run: |
        #pytest ./tests/python_test.py
        python ./tests/python_test.py
