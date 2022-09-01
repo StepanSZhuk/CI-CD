@@ -1,6 +1,6 @@
-# import os
-# test_email = os.environ.get('TEST_EMAIL')
-# test_password = os.environ.get('TEST_PASSWORD')
+import os
+test_email = os.environ.get('TEST_EMAIL')
+test_password = os.environ.get('TEST_PASSWORD')
 
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
@@ -36,13 +36,13 @@ WebDriverWait(driver=driver, timeout=20).until(
 
 driver.get ("https://www.facebook.com")
 
-driver.find_element(By.ID, 'email').send_keys('fakeemail@crossbrowsertesting.com')
-# print(test_email)
-# driver.find_element(By.ID, 'email').send_keys(test_email)
+# driver.find_element(By.ID, 'email').send_keys('fakeemail@crossbrowsertesting.com')
+print(test_email)
+driver.find_element(By.ID, 'email').send_keys(test_email)
 
-driver.find_element(By.ID, 'pass').send_keys('fakepassword1')
-# driver.find_element(By.ID, 'pass').send_keys(test_password)
-# print(test_password)
+# driver.find_element(By.ID, 'pass').send_keys('fakepassword1')
+driver.find_element(By.ID, 'pass').send_keys(test_password)
+print(test_password)
 
 driver.find_element(By.NAME, 'login').click()
 
